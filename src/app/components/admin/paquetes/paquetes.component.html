@@ -2,7 +2,7 @@
     <div class="container-flex p-3">
       <h1>Paquetes completos</h1>
       <div>
-        <div class="container-flex pt-3 p-4">
+        <div class="container-flex pt-3 p-2">
           <table class="table">
             <thead>
               <tr>
@@ -10,8 +10,7 @@
                 <th scope="col">Destino</th>
                 <th scope="col">Tiempo</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Hora de Recojo</th>
-                <th scope="col">Edición de información</th>
+                <th scope="col">Edición</th>
               </tr>
             </thead>
             <tbody *ngFor="let packet of packet">
@@ -20,7 +19,6 @@
                 <td>{{ packet.nombreDestino }}</td>
                 <td>{{ packet.tiempo }}</td>
                 <td>S/{{ packet.precioDestino }}.00</td>
-                <td>{{ packet.hora }}:{{ packet.min }} a.m</td>
                 <td><a class="btn btn-primary">Editar</a></td>
               </tr>
             </tbody>

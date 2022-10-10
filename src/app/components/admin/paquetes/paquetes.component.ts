@@ -23,46 +23,46 @@ export class PaquetesComponent implements OnInit {
     
     {
       idPacket: 2,
-      nombreDestino: "Machupicchu",
+      nombreDestino: "Valle Sagrado",
       tiempo: "Full Day",
-      precioDestino: 550,
-      hora: 4,
+      precioDestino: 320,
+      hora: 7,
       min: 0,
     },
 
     {
       idPacket: 3,
-      nombreDestino: "Machupicchu",
-      tiempo: "Full Day",
-      precioDestino: 550,
-      hora: 4,
+      nombreDestino: "Montaña Arco Iris",
+      tiempo: "12 horas",
+      precioDestino: 350,
+      hora: 5,
       min: 0,
     },
 
     {
       idPacket: 4,
-      nombreDestino: "Machupicchu",
-      tiempo: "Full Day",
-      precioDestino: 550,
-      hora: 4,
+      nombreDestino: "Laguna Humantay",
+      tiempo: "12 horas",
+      precioDestino: 410,
+      hora: 7,
       min: 0,
     },
 
     {
       idPacket: 5,
-      nombreDestino: "Machupicchu",
-      tiempo: "Full Day",
-      precioDestino: 550,
-      hora: 4,
+      nombreDestino: "Ollantaytambo",
+      tiempo: "10 horas",
+      precioDestino: 330,
+      hora: 7,
       min: 0,
     },
 
     {
       idPacket: 6,
-      nombreDestino: "Machupicchu",
-      tiempo: "Full Day",
-      precioDestino: 550,
-      hora: 4,
+      nombreDestino: "Ciudad del Cusco",
+      tiempo: "4 horas",
+      precioDestino: 250,
+      hora: 9,
       min: 0,
     }
   ];
