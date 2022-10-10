@@ -1,4 +1,5 @@
 export interface Packet {
+    idPacket: number;
     nombreDestino: string;
     tiempo: string;
     precioDestino: number;
