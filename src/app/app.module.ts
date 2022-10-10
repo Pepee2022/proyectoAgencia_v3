@@ -13,6 +13,7 @@ import { FooterComponent } from './components/commons/footer/footer.component';
 import { DatosComponent } from './components/admin/datos/datos.component';
 import { VentasComponent } from './components/admin/ventas/ventas.component';
 import { PaquetesComponent } from './components/admin/paquetes/paquetes.component';
+import { NuevoPaqueteComponent } from './components/admin/nuevo-paquete/nuevo-paquete.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PaquetesComponent } from './components/admin/paquetes/paquetes.componen
     FooterComponent,
     DatosComponent,
     VentasComponent,
-    PaquetesComponent
+    PaquetesComponent,
+    NuevoPaqueteComponent
   ],
   imports: [
     BrowserModule,
