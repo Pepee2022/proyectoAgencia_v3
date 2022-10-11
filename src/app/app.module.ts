@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgxNavbarModule } from 'ngx-bootstrap-navbar'
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 import { CollapseModule } from 'ngx-bootstrap/collapse'
+import { ModalModule } from 'ngx-bootstrap/modal';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +15,6 @@ import { FooterComponent } from './components/commons/footer/footer.component';
 import { DatosComponent } from './components/admin/datos/datos.component';
 import { VentasComponent } from './components/admin/ventas/ventas.component';
 import { PaquetesComponent } from './components/admin/paquetes/paquetes.component';
-import { NuevoPaqueteComponent } from './components/admin/nuevo-paquete/nuevo-paquete.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,7 @@ import { NuevoPaqueteComponent } from './components/admin/nuevo-paquete/nuevo-pa
     FooterComponent,
     DatosComponent,
     VentasComponent,
-    PaquetesComponent,
-    NuevoPaqueteComponent
+    PaquetesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +31,9 @@ import { NuevoPaqueteComponent } from './components/admin/nuevo-paquete/nuevo-pa
     AppRoutingModule,
     NgxNavbarModule,
     BsDropdownModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    ModalModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
