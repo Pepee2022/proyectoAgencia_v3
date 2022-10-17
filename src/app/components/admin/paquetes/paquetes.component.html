@@ -25,7 +25,7 @@
           </table>
         </div>
         <div class="p-5 pt-2 pb-2">
-          <td><a class="btn btn-primary">Nuevo</a></td>
+          <td><button type="button" class="btn btn-primary" (click)="openModal(template2, id)">Nuevo</button>
         </div>
     </div>
 </div>
@@ -62,6 +62,43 @@
       </div>
       <div class="col-md-3">
         <button type="button" class="btn btn-success" (click)="paqueteGuardar()" (click)="modalRef?.hide()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<!-- Modal -->
+<ng-template #template2>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Editar Paquete</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <form id="form1" name="form1" #form="ngForm">
+        <div class="mb-3">
+            <label for="detalle" class="form-label title-description">Destino</label>
+            <input id="input1" name="input1" type="text" required [(ngModel)]="destino" class="form-control" id="detalle" placeholder="Detalle"/>
+        </div>
+        <div class="mb-3">
+            <label for="Nombre" class="form-label title-description">Tiempo</label>
+            <input id="input2" name="input2" type="text" required [(ngModel)]="tiempo" class="form-control" id="Nombre" placeholder="Nombre" autofocus/>
+        </div>
+        <div class="mb-3">
+            <label for="Stoke" class="form-label title-description">Precio</label>
+            <input id="input3" name="input3" type="text" required [(ngModel)]="precio" class="form-control" id="Stoke" placeholder="Stoke"/>
+            
+        </div>
+    </form>
+    <div class="row p-3 pt-1 pb-1">
+      <div class="col-md-3">
+        <button type="button" class="btn btn-danger" aria-label="Close" (click)="modalRef?.hide()">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>Cancelar
+        </button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-success" (click)="paqueteNuevo()" (click)="modalRef?.hide()">Guardar</button>
       </div>
     </div>
   </div>
