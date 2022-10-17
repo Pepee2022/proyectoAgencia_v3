@@ -16,25 +16,30 @@ export class PaquetesComponent implements OnInit {
   modalRef?: BsModalRef;
   posicionEditar:number = 0;
 
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  openModal(template: TemplateRef<any>, position:number) {
+    this.modalRef=this.modalService.show(template);
+    this.posicionEditar=position;
+    this.id=this.packet[this.posicionEditar].idPacket;
     this.destino=this.packet[this.posicionEditar].nombreDestino;
     this.tiempo=this.packet[this.posicionEditar].tiempo;
     this.precio=this.packet[this.posicionEditar].precioDestino;
   }
-
-  destino: string ="";
+  
+  id: number = 0;
+  destino: string = "";
   tiempo: string = "";
   precio: number = 0;
 
   paqueteGuardar(): void{
     
     const replace: any ={
+      idPacket: this.id,
       nombreDestino: this.destino,
       tiempo: this.tiempo,
       precioDestino: this.precio
     }
-    this.packet.splice(this.posicionEditar,1,replace);
+    this.packet.splice(this.posicionEditar,this.id,replace);
+    this.id=0;
     this.destino="";
     this.tiempo="";
     this.precio=0;

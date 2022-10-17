@@ -19,7 +19,7 @@
                 <td>{{ packet.nombreDestino }}</td>
                 <td>{{ packet.tiempo }}</td>
                 <td>S/{{ packet.precioDestino }}.00</td>
-                <td><button type="button" class="btn btn-primary" (click)="openModal(template)">Editar</button></td>
+                <td><button type="button" class="btn btn-primary" (click)="openModal(template, id)">Editar</button></td>
               </tr>
             </tbody>
           </table>
@@ -30,6 +30,7 @@
     </div>
 </div>
 
+<!-- Modal -->
 <ng-template #template>
   <div class="modal-header">
     <h4 class="modal-title pull-left">Editar Paquete</h4>
