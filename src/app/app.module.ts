@@ -15,6 +15,10 @@ import { FooterComponent } from './components/commons/footer/footer.component';
 import { DatosComponent } from './components/admin/datos/datos.component';
 import { VentasComponent } from './components/admin/ventas/ventas.component';
 import { PaquetesComponent } from './components/admin/paquetes/paquetes.component';
+import { GaleriaComponent } from './components/paquetes/galeria/galeria.component';
+import { GuardadoGaleriaComponent } from './components/paquetes/guardado-galeria/guardado-galeria.component';
+import { FormatoGaleriaComponent } from './components/paquetes/formato-galeria/formato-galeria.component';
+import { DetalleProductoComponent } from './components/paquetes/detalle-producto/detalle-producto.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { PaquetesComponent } from './components/admin/paquetes/paquetes.componen
     DatosComponent,
     VentasComponent,
     PaquetesComponent,
+    GaleriaComponent,
+    GuardadoGaleriaComponent,
+    FormatoGaleriaComponent,
+    DetalleProductoComponent
   ],
   imports: [
     BrowserModule,
