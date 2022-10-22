@@ -23,7 +23,7 @@ import { PaquetesComponent } from './components/admin/paquetes/paquetes.componen
     FooterComponent,
     DatosComponent,
     VentasComponent,
-    PaquetesComponent
+    PaquetesComponent,
   ],
   imports: [
     BrowserModule,
