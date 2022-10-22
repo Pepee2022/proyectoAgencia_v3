@@ -1,3 +1,4 @@
+//Paquetes
 export interface Packet {
     idPacket: number;
     nombreDestino: string;
@@ -5,6 +6,7 @@ export interface Packet {
     precioDestino: number;
 }
 
+//User
 export interface User {
     nombreUsuario: string;
 }
