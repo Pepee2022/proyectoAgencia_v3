@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Packet } from '../model/admin.model';
 
+import {User as user} from 'src/app/model/admin.model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -59,6 +61,12 @@ export class PacketDataService {
       descripcion: "",
       tiempo: "4 horas",
       precioDestino: 250
+    }
+  ];
+
+  user: user[] = [
+    {
+      nombreUsuario: "Franck",
     }
   ];
 

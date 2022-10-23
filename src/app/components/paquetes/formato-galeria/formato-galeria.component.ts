@@ -11,12 +11,12 @@ export class FormatoGaleriaComponent implements OnInit {
   @Input() paquete: Packet = {
     idPacket: 0,
     imge: "",
-    nombreDestino: "",
+    nombreDestino: "" ,
     descripcion: "",
     tiempo: "",
     precioDestino: 0,
+
   };
-  
   @Output() pressAgregarP = new EventEmitter();
   constructor() { }
 

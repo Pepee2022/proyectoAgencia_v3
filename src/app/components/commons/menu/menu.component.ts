@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { User } from 'src/app/model/admin.model';
 
-import {User as user} from 'src/app/model/admin.model';
+import { PacketDataService } from 'src/app/services/packet-data.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,12 +13,12 @@ import {User as user} from 'src/app/model/admin.model';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private packetDataService: PacketDataService) {
+    this.user = packetDataService.user;
+  }
 
-  user: user[] = [
-    {
-      nombreUsuario: "Franck",
-    }
+  user: User[] = [
+
   ];
 
   ngOnInit(): void {

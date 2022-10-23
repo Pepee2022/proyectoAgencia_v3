@@ -1,6 +1,6 @@
 import { Component, Input ,OnInit } from '@angular/core';
 import { Packet } from 'src/app/model/admin.model';
-import { PacketDataService } from 'src/app/services/packet-data.service';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-guardado-galeria',
@@ -12,7 +12,7 @@ export class GuardadoGaleriaComponent implements OnInit {
   @Input() viajes: Packet[] = [];
   pags: string[] = [];
 
-  constructor(private PacketDataService: PacketDataService) {
+  constructor(private storeService: StoreService) {
     console.log("guardado.galeria.component.constructor - " + this.viajes.length);
      
    }
@@ -22,7 +22,7 @@ export class GuardadoGaleriaComponent implements OnInit {
   }
 
   seleccionar(tour: Packet): void {
-    this.PacketDataService.agregarPags(tour);
+    this.storeService.agregarPags(tour);
     console.log(this.pags);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, EventEmitter ,Input ,OnInit, Output } from '@angular/core';
 import { Packet } from 'src/app/model/admin.model';
-import { PacketDataService } from 'src/app/services/packet-data.service';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-galeria',
@@ -9,16 +9,16 @@ import { PacketDataService } from 'src/app/services/packet-data.service';
 })
 export class GaleriaComponent implements OnInit {
 
-  packet: Packet[] = [
+  paquetes: Packet[] = [
   ];
 
   ngOnInit(): void {
   }
 
-  @Input() paquetes: Packet = {
+  @Input() paquete: Packet = {
     idPacket: 0,
     imge: "",
-    nombreDestino: "",
+    nombreDestino: "" ,
     descripcion: "",
     tiempo: "",
     precioDestino: 0,
@@ -26,9 +26,9 @@ export class GaleriaComponent implements OnInit {
 
   @Output() pressAgregarP = new EventEmitter();
 
-  constructor(private PacketDataService: PacketDataService) { 
-    this.packet = PacketDataService.packet;
-    console.log("galeria.component.ts - " + this.packet.length);
+  constructor(private storeService: StoreService) { 
+    this.paquetes = storeService.paquetes;
+    console.log("galeria.component.ts - " + this.paquetes.length);
   }
 
   clickAgregarP(tour: string): void {
@@ -37,7 +37,6 @@ export class GaleriaComponent implements OnInit {
   }
 
   eliminarPaquete(posicion: number): void {
-    this.packet.splice(posicion, 1)
+    this.paquetes.splice(posicion, 1)
   }
-
 }

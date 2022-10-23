@@ -7,12 +7,25 @@
     </button>
     <ngx-navbar-collapse #collapse="ngxNavbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <!-- PARTE DEL CARRITO -->
         <li class="nav-item dropdown" dropdown>
-          <a class="nav-link dropdown-toggle" dropdownToggle id="usuarioDropdown" role="button" aria-controls="dropdownUsuario" *ngFor="let user of user">
-            Bienvenid(a) {{ user.nombreUsuario }}
+          <a class="nav-link dropdown-toggle" dropdownToggle id="usuarioDropdown" role="button" aria-controls="dropdownUsuario" data-bs-toggle="dropdowm">  
+            Paquetes
           </a>
           <ul class="dropdown-menu" id="dropdownUsuario" *dropdownMenu aria-labelledby="usuarioDropdown">
-            <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/datos">Usuario</a></li>
+            <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/galeria">Paquetes</a></li>
+            <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/detalle-producto" >Carrito</a></li>
+          </ul>
+        </li>
+
+        <!-- VISTA -->
+        <li class="nav-item dropdown" dropdown>
+          <a class="nav-link dropdown-toggle" dropdownToggle id="usuarioDropdown" role="button" aria-controls="dropdownUsuario">
+            Administrador
+          </a>
+          <ul class="dropdown-menu" id="dropdownUsuario" *dropdownMenu aria-labelledby="usuarioDropdown">
+            <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/datos" *ngFor="let user of user"> {{ user.nombreUsuario }} </a></li>
             <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/paquetes">Administrar Productos</a></li>
             <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/ventas">Ventas</a>
             <li><hr class="dropdown-divider"></li>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Packet } from 'src/app/model/admin.model';
-import { PacketDataService } from 'src/app/services/packet-data.service'
+import { StoreService } from 'src/app/services/store.service'
 
 @Component({
   selector: 'app-detalle-producto',
@@ -11,8 +11,8 @@ export class DetalleProductoComponent implements OnInit {
 
   pags: Packet[] = [];
 
-  constructor(private PacketDataService: PacketDataService) { 
-    this.pags = PacketDataService.packet;
+  constructor(private stroreService: StoreService) { 
+    this.pags = stroreService.carrito;
   }
 
   eliminarPaquete(posicion: number): void {
@@ -23,4 +23,5 @@ export class DetalleProductoComponent implements OnInit {
   }
 
 }
+
 

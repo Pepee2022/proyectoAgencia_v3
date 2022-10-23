@@ -23,13 +23,17 @@ export class PaquetesComponent implements OnInit {
     this.modalRef=this.modalService.show(template);
     this.posicionEditar=position;
     this.id=this.packet[this.posicionEditar].idPacket;
+    this.imagen=this.packet[this.posicionEditar].imge;
     this.destino=this.packet[this.posicionEditar].nombreDestino;
+    this.descripcion=this.packet[this.posicionEditar].descripcion;
     this.tiempo=this.packet[this.posicionEditar].tiempo;
     this.precio=this.packet[this.posicionEditar].precioDestino;
   }
   
   id: number = 0;
+  imagen: string = "";
   destino: string = "";
+  descripcion: string = "";
   tiempo: string = "";
   precio: number = 0;
 
@@ -37,13 +41,18 @@ export class PaquetesComponent implements OnInit {
     
     const replace: any ={
       idPacket: this.id,
+      imge: this.imagen,
       nombreDestino: this.destino,
+      descripcion: this.descripcion,
       tiempo: this.tiempo,
       precioDestino: this.precio
     }
+    
     this.packet.splice(this.posicionEditar,this.id,replace);
     this.id=0;
+    this.imagen="";
     this.destino="";
+    this.descripcion="";
     this.tiempo="";
     this.precio=0;
   }
@@ -51,14 +60,18 @@ export class PaquetesComponent implements OnInit {
   paqueteNuevo(): void {
     const newPacket ={
       idPacket: this.id,
+      imge: this.imagen,
       nombreDestino: this.destino,
+      descripcion: this.descripcion,
       tiempo: this.tiempo,
       precioDestino: this.precio
     }
 
     this.packet.push(newPacket);
     this.id = 0;
+    this.imagen="";
     this.destino = "";
+    this.descripcion="";
     this.tiempo = "";
     this.precio=0;
   }
