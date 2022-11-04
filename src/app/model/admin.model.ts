@@ -8,11 +8,6 @@ export interface Packet {
     precioDestino: number;
 }
 
-//User
-export interface User {
-    nombreUsuario: string;
-}
-
 export interface Paquete {
     id: string;
     imge:string ;
@@ -21,6 +16,7 @@ export interface Paquete {
     precio:number ;
 }
 
+//Login
 export interface Login {
     id: string;
     user: string;

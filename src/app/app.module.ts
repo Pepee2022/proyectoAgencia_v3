@@ -6,7 +6,8 @@ import { NgxNavbarModule } from 'ngx-bootstrap-navbar'
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 import { CollapseModule } from 'ngx-bootstrap/collapse'
 import { ModalModule } from 'ngx-bootstrap/modal';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { GuardadoGaleriaComponent } from './components/paquetes/guardado-galeria
 import { FormatoGaleriaComponent } from './components/paquetes/formato-galeria/formato-galeria.component';
 import { DetalleProductoComponent } from './components/paquetes/detalle-producto/detalle-producto.component';
 import { LoginComponent } from './components/admin/login/login.component';
+import { PrincipalComponent } from './components/commons/principal/principal.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { LoginComponent } from './components/admin/login/login.component';
     GuardadoGaleriaComponent,
     FormatoGaleriaComponent,
     DetalleProductoComponent,
-    LoginComponent
+    LoginComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { LoginComponent } from './components/admin/login/login.component';
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
     ModalModule.forRoot(),
+    CarouselModule.forRoot(),
     FormsModule
   ],
   providers: [],

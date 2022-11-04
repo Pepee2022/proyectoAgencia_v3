@@ -11,8 +11,8 @@ export class DetalleProductoComponent implements OnInit {
 
   pags: Packet[] = [];
 
-  constructor(private stroreService: StoreService) { 
-    this.pags = stroreService.carrito;
+  constructor(private storeService: StoreService) { 
+    this.pags = storeService.carrito;
   }
 
   eliminarPaquete(posicion: number): void {

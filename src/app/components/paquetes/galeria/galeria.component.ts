@@ -1,6 +1,7 @@
 import { Component, EventEmitter ,Input ,OnInit, Output } from '@angular/core';
 import { Packet } from 'src/app/model/admin.model';
 import { StoreService } from 'src/app/services/store.service';
+import { PacketDataService } from 'src/app/services/packet-data.service';
 
 @Component({
   selector: 'app-galeria',
@@ -26,8 +27,8 @@ export class GaleriaComponent implements OnInit {
 
   @Output() pressAgregarP = new EventEmitter();
 
-  constructor(private storeService: StoreService) { 
-    this.paquetes = storeService.paquetes;
+  constructor(private PacketDataService: PacketDataService) { 
+    this.paquetes = PacketDataService.packet;
     console.log("galeria.component.ts - " + this.paquetes.length);
   }
 

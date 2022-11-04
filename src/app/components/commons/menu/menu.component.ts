@@ -1,9 +1,9 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
-import { User } from 'src/app/model/admin.model';
+import { Login } from 'src/app/model/admin.model';
 
-import { PacketDataService } from 'src/app/services/packet-data.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-menu',
@@ -13,15 +13,28 @@ import { PacketDataService } from 'src/app/services/packet-data.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private packetDataService: PacketDataService) {
-    this.user = packetDataService.user;
+  validarLogin: boolean = this.LoginService.usuarioActivo !== undefined;
+
+  @Output() cerrarSesion = new EventEmitter();
+
+  constructor(private LoginService:LoginService) {
+    
   }
 
-  user: User[] = [
+  user: Login[] = [
 
   ];
 
   ngOnInit(): void {
+  }
+
+  actualiza(): void {
+    this.validarLogin = this.LoginService.usuarioActivo !== undefined;
+  }
+
+  salir(): void {
+    this.LoginService.usuarioActivo = undefined;
+    this.cerrarSesion.emit();
   }
 
 }

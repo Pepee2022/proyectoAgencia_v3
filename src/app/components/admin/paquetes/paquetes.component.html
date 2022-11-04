@@ -1,4 +1,5 @@
-<div class="content" role="main">
+<div *ngIf="validarLogin">
+  <div class="content" role="main">
     <div class="container-flex p-3">
       <h1>Paquetes completos</h1>
       <div>
@@ -27,7 +28,13 @@
         <div class="p-5 pt-2 pb-2">
           <td><button type="button" class="btn btn-primary" (click)="openModal(template2, id)">Nuevo</button>
         </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<div *ngIf="!validarLogin" class="container text-center p-5">
+  <h1>Por favor, inicie sesión</h1>
 </div>
 
 <!-- Modal -->

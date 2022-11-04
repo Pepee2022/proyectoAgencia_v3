@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/datos">Cusco City Tours
-    </a>
+    <img class="logo" src="https://cdn-icons-png.flaticon.com/512/2060/2060284.png" width ="35" >
+    <a class="navbar-brand" routerLink="/principal"></a>
+    <a class="navbar-brand" routerLink="/principal">Cusco City Tours</a>
     <button class="navbar-toggler" type="button" (click)="collapse.toggle()" data-bs-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,57 +20,26 @@
           </ul>
         </li>
 
-        <!-- VISTA -->
-        <li class="nav-item dropdown" dropdown>
+        <!-- VISTA ADMIN -->
+        <li *ngIf="!validarLogin" class="nav-item dropdown" dropdown>
           <a class="nav-link dropdown-toggle" dropdownToggle id="usuarioDropdown" role="button" aria-controls="dropdownUsuario">
             Administrador
           </a>
           <ul class="dropdown-menu" id="dropdownUsuario" *dropdownMenu aria-labelledby="usuarioDropdown">
-            <li><a class="dropdown-item" (click)="collapse.toggle()" > Acceder </a></li>
+            <!-- <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/datos" *ngFor="let user of user"> Bienvenido {{ user.user }} </a></li> -->
+            <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/datos"> Bienvenido usuario </a></li>
             <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/paquetes">Administrar Productos</a></li>
             <li><a class="dropdown-item" (click)="collapse.toggle()" routerLink="/ventas">Ventas</a>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" (click)="collapse.toggle()">Cerrar Sesión</a></li>
+            <li><a class="dropdown-item" (click)="salir()" routerLink="/principal">Cerrar Sesión</a></li>
           </ul>
+        </li>
+
+        <!-- LOGIN -->
+        <li *ngIf="!validarLogin" (login) = "actualiza()" class="nav-item">
+          <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
         </li>
       </ul>
     </ngx-navbar-collapse>
   </div>
 </nav>
-
-<ng-template #template>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">Iniciar Sesión</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
-      </button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <div class="row p-3 pt-1 pb-1">
-      <div class="col-md-3">
-        <button type="button" class="btn btn-danger" aria-label="Close" (click)="modalRef?.hide()">
-          <span aria-hidden="true" class="visually-hidden">&times;</span>Cancelar
-        </button>
-      </div>
-      <div class="col-md-3">
-        <button type="button" class="btn btn-success" (click)="paqueteGuardar()" (click)="modalRef?.hide()">Guardar</button>
-      </div>
-    </div>
-  </div>
-</ng-template>

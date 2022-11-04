@@ -15,8 +15,8 @@ export class FormatoGaleriaComponent implements OnInit {
     descripcion: "",
     tiempo: "",
     precioDestino: 0,
-
   };
+  
   @Output() pressAgregarP = new EventEmitter();
   constructor() { }
 

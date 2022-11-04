@@ -9,18 +9,17 @@ export class LoginService {
   usuario: Login[] = [
     {
       id: '001',
-      user: 'imolero',
+      user: 'pepee1920',
       password: '123456',
     },
     {
       id: '002',
-      user: 'jprada',
-      password: 'nosemipassword',
+      user: 'sanic',
+      password: 'sanic123',
     }
   ]
 
-
-  usuarioActivo: Login = this.usuarioVacio();
+  usuarioActivo: Login | undefined = undefined;
   
   constructor() { }
 
@@ -32,11 +31,13 @@ export class LoginService {
     };
   }
 
-  validarUsuario(user: string, password: string): boolean{
+  validarUsuario(user: string, password: string): boolean {
     const users: Login | undefined = this.usuario.find(usr => {
-      return (usr.user === user && usr.password === password )
+      return (usr.user === user && usr.password === password );
     });
     if (users === undefined) {
+      console.log('Intento fallido');
+      this.usuarioActivo = undefined;
       return false;
     }
     this.usuarioActivo = users;

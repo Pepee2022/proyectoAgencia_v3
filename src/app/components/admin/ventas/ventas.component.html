@@ -1,3 +1,9 @@
-<div class="container-flex p-3">
-    <h1>Ventas realizadas</h1>
+<div *ngIf="validarLogin">
+    <div class="container-flex p-3">
+        <h1>Ventas realizadas</h1>
+    </div> 
 </div>
+
+<div *ngIf="!validarLogin" class="container text-center p-5">
+    <h1>Por favor, inicie sesión</h1>
+  </div>

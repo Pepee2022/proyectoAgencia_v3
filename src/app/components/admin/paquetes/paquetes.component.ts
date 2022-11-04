@@ -4,6 +4,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 import {Packet as Packet} from 'src/app/model/admin.model';
 import { PacketDataService } from 'src/app/services/packet-data.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-paquetes',
@@ -12,7 +13,9 @@ import { PacketDataService } from 'src/app/services/packet-data.service';
 })
 export class PaquetesComponent implements OnInit {
 
-  constructor(private packetDataService: PacketDataService, public modalService: BsModalService) { 
+  validarLogin: boolean = this.LoginService.usuarioActivo !== undefined;
+
+  constructor(private packetDataService: PacketDataService, public modalService: BsModalService, private LoginService:LoginService) { 
     this.packet = packetDataService.packet;
   }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { LoginService } from 'src/app/services/login.service';
+
 @Component({
   selector: 'app-ventas',
   templateUrl: './ventas.component.html',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VentasComponent implements OnInit {
 
-  constructor() { }
+  validarLogin: boolean = this.LoginService.usuarioActivo !== undefined;
+
+  constructor(private LoginService:LoginService) { }
 
   ngOnInit(): void {
   }

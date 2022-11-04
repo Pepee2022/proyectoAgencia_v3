@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from "@angular/router"
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  login: string = "";
+  user: string = "";
   password: string = "";
 
-  constructor() { }
+  @Output() login = new EventEmitter();
+
+  constructor(private LoginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  ingresar(): void {
+    if (this.LoginService.validarUsuario(this.user, this.password)) {
+      this.login.emit();
+      this.router.navigate(['/principal']);
+    }
+    else {
+      alert("Usuario o contraseña errados");
+    }
+  }
 }

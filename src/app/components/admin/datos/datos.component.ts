@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-datos',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatosComponent implements OnInit {
 
-  constructor() { }
+  validarLogin: boolean = this.LoginService.usuarioActivo !== undefined;
+
+  constructor(private LoginService:LoginService) { }
 
   ngOnInit(): void {
   }
-
 }
