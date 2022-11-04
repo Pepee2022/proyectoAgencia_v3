@@ -19,6 +19,7 @@ import { GaleriaComponent } from './components/paquetes/galeria/galeria.componen
 import { GuardadoGaleriaComponent } from './components/paquetes/guardado-galeria/guardado-galeria.component';
 import { FormatoGaleriaComponent } from './components/paquetes/formato-galeria/formato-galeria.component';
 import { DetalleProductoComponent } from './components/paquetes/detalle-producto/detalle-producto.component';
+import { LoginComponent } from './components/admin/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DetalleProductoComponent } from './components/paquetes/detalle-producto
     GaleriaComponent,
     GuardadoGaleriaComponent,
     FormatoGaleriaComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -20,3 +20,9 @@ export interface Paquete {
     descripcion:string ;
     precio:number ;
 }
+
+export interface Login {
+    id: string;
+    user: string;
+    password: string;
+}
